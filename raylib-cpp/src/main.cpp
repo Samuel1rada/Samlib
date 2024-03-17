@@ -1,18 +1,10 @@
 #include "raylib.h"
-#include "homebase.h"
-#include "myscene.h"
-#include "scene.h"
 
 constexpr auto SCREEN_WIDTH  = 800;
 constexpr auto SCREEN_HEIGHT = 450;
 
-int main(void)
+int main()
 {
-    // Myscene myscene;   
-
-    // HomeBase homebase;
-    // homebase.position = {100.0f, 100.0f, 0.0f};
-
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Window title");
     SetTargetFPS(60);
 
@@ -38,5 +30,4 @@ int main(void)
     CloseWindow();
 
     return 0;
-    
 }
