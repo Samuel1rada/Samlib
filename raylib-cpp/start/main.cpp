@@ -79,38 +79,37 @@ void IssueMovementCommand()
     }
 }
 
-// Function to update unit movement
-// void UpdateUnitMovement()
-// {
-//     for (Unit &unit : units)
-//     {
+void UpdateUnitMovement()
+{
+    for (Unit &unit : units)
+    {
 
-//         if (unit.position.x != unit.destination.x || unit.position.y != unit.destination.y)
-//         {
-//             Vector2 center = { unit.position.x + TILE_SIZE / 2, unit.position.y + TILE_SIZE / 2 };
-//             Vector2 direction = { unit.destination.x - center.x, unit.destination.y - center.y };
-//             float length = sqrt(direction.x * direction.x + direction.y * direction.y);
+        if (unit.position.x != unit.destination.x || unit.position.y != unit.destination.y)
+        {
+            Vector2 center = { unit.position.x + TILE_SIZE / 2, unit.position.y + TILE_SIZE / 2 };
+            Vector2 direction = { unit.destination.x - center.x, unit.destination.y - center.y };
+            float length = sqrt(direction.x * direction.x + direction.y * direction.y);
 
-//             if (length > 0)
-//             {
-//                 direction.x /= length;
-//                 direction.y /= length;
+            if (length > 0)
+            {
+                direction.x /= length;
+                direction.y /= length;
 
-//                 center.x += direction.x * UNIT_SPEED;
-//                 center.y += direction.y * UNIT_SPEED;
+                center.x += direction.x * UNIT_SPEED;
+                center.y += direction.y * UNIT_SPEED;
 
-//                 unit.position.x = center.x - TILE_SIZE / 2;
-//                 unit.position.y = center.y - TILE_SIZE / 2;
-//             }
+                unit.position.x = center.x - TILE_SIZE / 2;
+                unit.position.y = center.y - TILE_SIZE / 2;
+            }
 
-//             if (abs(unit.position.x - unit.destination.x) <= UNIT_SPEED && abs(unit.position.y - unit.destination.y) <= UNIT_SPEED)
-//             {
-//                 unit.position = unit.destination;
-//             }
+            if (abs(unit.position.x - unit.destination.x) <= UNIT_SPEED && abs(unit.position.y - unit.destination.y) <= UNIT_SPEED)
+            {
+                unit.position = unit.destination;
+            }
 
-//         }
-//     }
-// }
+        }
+    }
+}
 
 void AstarPath()
 {
