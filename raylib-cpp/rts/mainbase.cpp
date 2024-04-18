@@ -1,17 +1,9 @@
 #include "mainbase.h"
 
 
-Mainbase::Mainbase(int Type) : Entity(), type(Type)
+Mainbase::Mainbase() : Entity()
 {
-
-    if(type == 0)
-    {
-        addTexture("assets/mainbase.png");
-    } 
-    else if(type == 1)
-    {
-        addTexture("assets/mainbase2.png");
-    }
+    addTexture("assets/test.png");
 }
 Mainbase::~Mainbase()
 {
@@ -20,8 +12,4 @@ Mainbase::~Mainbase()
 void Mainbase::update(float deltaTime)
 {
 
-}
-int Mainbase::getType() const
-{
-     return type;
 }

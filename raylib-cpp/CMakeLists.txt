@@ -23,8 +23,6 @@ add_library(samlib
     samlib/core.h
     samlib/entity.cpp
     samlib/entity.h
-    samlib/util.cpp
-    samlib/util.h
 )
 target_link_libraries(samlib PRIVATE raylib)
 
@@ -65,20 +63,12 @@ if(MAKE_RTS)
         rts/myscene.h
         rts/mainbase.cpp
         rts/mainbase.h
-        rts/node.cpp
-        rts/node.h
-        rts/unit.cpp 
-        rts/unit.h
     )
     target_link_libraries(rts PRIVATE samlib raylib ) # Link with Raylib and samlib
 
     # Copy assets to the build directory
     file(
         COPY rts/assets
-        DESTINATION ${CMAKE_BINARY_DIR}
-    )
-    file(
-        COPY rts/map
         DESTINATION ${CMAKE_BINARY_DIR}
     )
 endif()

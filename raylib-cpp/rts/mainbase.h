@@ -7,15 +7,12 @@
 class Mainbase : public Entity
 {
 public:
-    Mainbase(int Type);
+    Mainbase();
     virtual ~Mainbase();
 
     virtual void update(float deltaTime);
-    int getType() const;
-    int type;
+
 private:
-
-
 };
 
 #endif // MYSCENE_H
