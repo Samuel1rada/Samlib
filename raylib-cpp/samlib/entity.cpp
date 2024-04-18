@@ -1,4 +1,5 @@
 #include <entity.h>
+#include <iostream>
 
 Entity::Entity() 
 {
@@ -6,9 +7,8 @@ Entity::Entity()
     rotation = {0.0f, 0.0f, 0.0f};
     scale = {1.0f, 1.0f, 0.0f};
 
-    source = {0, 0, 0, 0,};
-    dest = {0, 0, 0, 0,};
-    origin = {0, 0};
+
+
 }   
 
 Entity::~Entity() 
@@ -23,12 +23,13 @@ void Entity::update(float deltaTime)
 
 void Entity::draw()
 {
-    
+    DrawTexture(this->_texture, position.x, position.y, WHITE);
 }
 
 void Entity::addChild(Entity* child)
 {
     _children.push_back(child);
+
 }
 
 void Entity::removeChild(Entity* child)

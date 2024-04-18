@@ -1,14 +1,14 @@
-#ifndef MAINBASE_H
-#define MAINBASE_H
+#ifndef NODE_H
+#define NODE_H
 
 #include "raylib.h"
 #include "entity.h"
 
-class Mainbase : public Entity
+class Node : public Entity
 {
 public:
-    Mainbase(int Type);
-    virtual ~Mainbase();
+    Node(int Type);
+    virtual ~Node();
 
     virtual void update(float deltaTime);
     int getType() const;
@@ -18,4 +18,5 @@ private:
 
 };
 
-#endif // MYSCENE_H
+
+#endif // NODE_H
